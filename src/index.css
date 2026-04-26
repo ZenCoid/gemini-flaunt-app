@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  
+  --color-brand-navy: #050508;
+  --color-brand-navy-light: #0d0d1a;
+  --color-accent-pink: #f472b6;
+  --color-accent-orange: #fb923c;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-navy text-white/90 min-h-screen font-sans antialiased selection:bg-pink-500/30;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/[0.02] border border-white/5 backdrop-blur-xl;
+  }
+  
+  .glass-card {
+    @apply bg-white/[0.03] border border-white/10 backdrop-blur-2xl shadow-2xl shadow-black/50;
+  }
+  
+  .text-gradient {
+    @apply bg-linear-to-br from-pink-400 via-orange-400 to-amber-300 bg-clip-text text-transparent;
+  }
+  
+  .bg-gradient-brand {
+    @apply bg-linear-to-br from-pink-500 via-orange-500 to-amber-400;
+  }
+
+  .text-shadow-glow {
+    text-shadow: 0 0 20px rgba(244, 114, 182, 0.3);
+  }
+
+  .atmosphere-glow {
+    background: 
+      radial-gradient(circle at 50% -20%, rgba(244, 114, 182, 0.15) 0%, transparent 70%),
+      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap');
